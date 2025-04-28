@@ -14,10 +14,13 @@ public interface UserRepository extends JpaRepository<User, Long> {
 
     boolean existsByEmail(String email);
 
+    // Lưu người dùng
     User save(User hoidanit);
 
+    // Xóa người dùng theo id
     void deleteById(long id);
 
+    // Tìm kiếm người dùng theo id
     User findById(long id);
 
 }
