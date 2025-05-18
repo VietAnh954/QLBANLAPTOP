@@ -1,6 +1,8 @@
 package vn.hoidanit.laptopshop.service;
 
 import java.util.List;
+import java.util.Optional;
+
 import vn.hoidanit.laptopshop.domain.Role;
 import org.springframework.stereotype.Service;
 import vn.hoidanit.laptopshop.repository.RoleRepository;
@@ -60,5 +62,9 @@ public class UserService {
     public boolean checkEmailExist(String email) {
         return this.userRepository.existsByEmail(email);
 
+    }
+
+    public Optional<User> getUserByEmail(String email) {
+        return this.userRepository.findByEmail(email);
     }
 }
